@@ -1,0 +1,29 @@
+<form [formGroup]="accountForm" (ngSubmit)="ngOnSubmit()">
+    <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput type="text" formControlName="username" required/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      matInput 
+      type="email"
+      placeholder="pat@example.com"
+      formControlName="email"
+      (blur)="updateErrorMessage()"
+      required
+    />
+    <mat-error *ngIf="accountForm.get('email')!.invalid">
+        {{ errorMessage() }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" required/>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" [disabled]="!accountForm.valid">Create</button>
+
+</form>

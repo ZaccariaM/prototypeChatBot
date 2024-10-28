@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin: 8px 4px 0px 4px;
+}

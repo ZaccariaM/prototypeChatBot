@@ -1,0 +1,30 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: stretch;
+}
+.account{
+    max-width: 400px;
+    margin: 5px;
+}
+.header{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 15px;
+}
+.data{
+    display: flex;
+    justify-content: space-between;
+}
+.account-footer {
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+button{
+    margin: 2px 2px 2px 2px;
+}
+.del{
+    background-color: rgb(243, 51, 51);
+    color: black;
+}

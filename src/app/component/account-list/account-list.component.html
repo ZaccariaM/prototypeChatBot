@@ -1,0 +1,32 @@
+<div class="grid">{{acc}}
+  <p>lunghezza:</p>{{acc.length}}
+  <mat-card class="account" appearance="outlined" *ngFor="let account of acc;">
+    <mat-card-header class="header">
+      <mat-card-title>{{account.username}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="data">
+            <p>Email: </p>
+            <p>{{account.email}}</p>
+        </div>
+        <div class="data">
+            <p>Password: </p>
+            <p>{{account.password}}</p>
+        </div>
+      
+    </mat-card-content>
+    <mat-card-footer class="account-footer">
+      <mat-chip-set aria-label="Account Actions">
+        <button mat-mini-fab aria-label="Edit account">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-mini-fab aria-label="Lock account" disabled>
+            <mat-icon>lock</mat-icon>
+        </button>
+        <button mat-mini-fab aria-label="Delete account" class="del" (click)="delete(account.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </mat-chip-set>
+    </mat-card-footer>
+  </mat-card>
+</div>
