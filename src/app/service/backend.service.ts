@@ -11,10 +11,12 @@ export class BackendService {
 
     //get all accounts
     getAccounts(): Observable<any> {
-        console.log("backend")
-        let ret= this.http.get(this.url);
-        console.log("fine backend")
-        return ret;
+        //console.log("backend")
+        return this.http.get(this.url);
+    }
+
+    getAccountById(id: string): Observable<any> {
+        return this.http.get(`${this.url}/${id}`);
     }
 
     //add new account
@@ -25,6 +27,6 @@ export class BackendService {
     //delete account 
     deleteAccount(id: string): Observable<any>{
         console.log(`${this.url}/${id}`);
-        return this.http.delete(`${this.url}/${id}`);
+        return this.http.delete(`${this.url}/${id}`, {responseType: 'text' });
     }
 }
